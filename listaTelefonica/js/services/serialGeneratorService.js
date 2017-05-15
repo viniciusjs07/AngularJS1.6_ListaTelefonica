@@ -2,7 +2,7 @@
  * Created by Vinicius Silva on 10/05/2017.
  */
 angular.module("listaTelefonica").provider("serialGeneratorContato", function () {
-    var _length = 100;
+    var _length = 10;
 
    this.$get = function () {
      return{
