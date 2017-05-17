@@ -5,6 +5,7 @@
     <title>Lista Telefônica</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/ui.css">
     <script src="lib/angular/angular.js"></script>
     <script src="lib/angular/i18n/angular-locale_pt.js"></script>
     <script src="lib/angular/angular-messages.js"></script>
@@ -15,10 +16,15 @@
     <script src="js/services/serialGeneratorService.js"></script>
     <script src="js/value/configValue.js"></script>
     <script src="js/config/serialGeneratorConfig.js"></script>
+    <script src="js/filters/nameFilter.js"></script>
+    <script src="js/filters/limitNameFilter.js"></script>
+    <script src="js/directives/uiAlertDirective.js"></script>
 </head>
 <body ng-controller="listaTelefonicaCTRL">
     <div class="jumbotron">
         <h4 ng-bind="app"></h4>
+        <ui-alert></ui-alert>
+
         <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você deseja buscar?">
         <table ng-show="contatos.length > 0" class="table">
             <tr>
@@ -33,7 +39,7 @@
                 | orderBy:criterioDeOrdenacao:direcaoDaOrdenacao">
                 <td><input type="checkbox" ng-model="contato.selecionado"></td>
                 <td>{{contato.serial}}</td>
-                <td>{{contato.nome | uppercase}}</td>
+                <td>{{contato.nome | name | limitName:20}}</td>
                 <td>{{contato.telefone}}</td>
                 <td>{{contato.operadora.nome | lowercase}}</td>
                 <td>{{contato.data | date:"dd/MM/yyyy HH:mm"}}</td>

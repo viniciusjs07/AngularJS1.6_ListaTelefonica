@@ -4,9 +4,13 @@
 angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($scope, contatosAPI, operadorasAPI, serialGeneratorContato) {
     $scope.app = "Lista Telefônica";
     $scope.contatos = [];
+    $scope.operadoras = [];
 
     var carregarContatos = function () {
         contatosAPI.getContatos().then(function (response) {
+            angular.forEach(response, function (item) {
+                item.serial = serialGeneratorContato.generatorSerial();
+            });
             $scope.contatos = response.data;
         });
     };
