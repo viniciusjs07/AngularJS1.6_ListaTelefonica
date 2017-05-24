@@ -8,6 +8,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($s
     $scope.contato = {
         data: 671511600000
     };
+    $scope.estados = [];
 
     var carregarContatos = function () {
         contatosAPI.getContatos().then(function (response) {
@@ -22,6 +23,10 @@ angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($s
             $scope.operadoras = response.data;
         });
     };
+    
+    var carregarEstados = function () {
+        
+    }
 
 
     $scope.adicionarContato = function (contato) {

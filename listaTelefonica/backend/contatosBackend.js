@@ -18,6 +18,8 @@ var operadoras = [
 	{nome: "GVT", codigo: 25, categoria: "Fixo", preco: 1},
 	{nome: "Embratel", codigo: 21, categoria: "Fixo", preco: 2}
 ];
+var estados = [{nome:"AC"},{nome:"AL"},{nome:"AP"},{nome:"AM"},{nome:"BA"},{nome:"CE"},{nome:"DF"},{nome:"ES"},{nome:"GO"},{nome:"MA"},{nome:"MT"}
+    ,{nome:"MS"},{nome:"MG"},{nome:"PA"},{nome:"PB"},{nome:"PR"},{nome:"PE"},{nome:"PI"}];
 
 app.listen(process.env.PORT || 3412);
 
@@ -41,4 +43,8 @@ app.post('/contatos', function(req, res) {
 
 app.get('/operadoras', function(req, res) {
   res.json(operadoras);
+});
+
+app.get('/estados', function (req,res) {
+   res.json(estados);
 });

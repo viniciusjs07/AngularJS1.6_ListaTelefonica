@@ -62,9 +62,14 @@
             <input class="form-control" type="text" ng-model="contato.data" name="data" placeholder="data" ui-date>
             <input class="form-control" type="text" ng-model="contato.cidade" name="cidade" placeholder="cidade">
 
+            <select class="form-control" ng-model="contato.estado" ng-options="estado.nome for estado in estados">
+                <option value="">Selecione seu estado</option>
+                </select>
+
         <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome +'( ' + (operadora.preco|currency) + ' )' group by operadora.categoria for operadora in operadoras |orderBy:'nome'">
             <option value="">Selecione uma operadora</option>
         </select>
+
         </form>
         <div ng-messages="contatoForm.nome.$error" class="alert alert-danger">
         <div ng-message="required">
