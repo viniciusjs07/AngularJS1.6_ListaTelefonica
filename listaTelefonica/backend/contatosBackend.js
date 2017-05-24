@@ -7,9 +7,9 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 var contatos = [
-	{serial : "F'1AK3FCVWDBJB(S.C*d",nome: "Bruno da Silva", telefone: "9999-2222", data: new Date(), operadora: {nome: "Oi", codigo: 14, categoria: "Celular"}},
-	{serial : "F@1AGSFCVWDBJB(S.C*$",nome: "SANDRA da MARIA de Souza correia", telefone: "9999-3333", data: new Date(), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular"}},
-	{serial : "F+1AK3FCV#2BJB(S.C%&",nome: "vinicius da silva", telefone: "9999-9999", data: new Date(), operadora: {nome: "Tim", codigo: 41, categoria: "Celular"}}
+	{serial : "F'1AK3FCVWDBJB(S.C*d",nome: "Bruno da Silva", telefone: "9999-2222", data: new Date(), operadora: {nome: "Oi", codigo: 14, categoria: "Celular"}, cidade:{nome:"Campina Grande",estado:"PB"}},
+	{serial : "F@1AGSFCVWDBJB(S.C*$",nome: "SANDRA da MARIA de Souza correia", telefone: "9999-3333", data: new Date(), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular"},cidade:{nome:"Recife",estado:"PE"}},
+	{serial : "F+1AK3FCV#2BJB(S.C%&",nome: "vinicius da silva", telefone: "9999-9999", data: new Date(), operadora: {nome: "Tim", codigo: 41, categoria: "Celular"},cidade:{nome:"Fortaleza",estado:"CE"}}
 ];
 var operadoras = [
 	{nome: "Oi", codigo: 14, categoria: "Celular", preco: 2},

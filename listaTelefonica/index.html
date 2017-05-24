@@ -35,6 +35,8 @@
                 <th><a href="" ng-click="ordenarPor('nome')">Nome</a> </th>
                 <th><a href="" ng-click="ordenarPor('contato')">Telefone</a></th>
                 <th><a href="" ng-click="ordenarPor('operadora.nome')">Operadora</a></th>
+                <th><a href="" ng-click="ordenarPor('cidade.nome')">Cidade</a></th>
+                <th><a href="" ng-click="ordenarPor('cidade.estado')">Estado</a></th>
                 <th>Data</th>
             </tr>
             <tr ng-class="{'selecionado negrito': contato.selecionado}" ng-repeat="contato in contatos |filter:criterioDeBusca
@@ -44,6 +46,8 @@
                 <td>{{contato.nome | name | limitName:20}}</td>
                 <td>{{contato.telefone}}</td>
                 <td>{{contato.operadora.nome | lowercase}}</td>
+                <td>{{contato.cidade.nome | lowercase}}</td>
+                <td>{{contato.cidade.estado | lowercase}}</td>
                 <td>{{contato.data | date:"dd/MM/yyyy HH:mm"}}</td>
             </tr>
         </table>
@@ -54,8 +58,9 @@
         <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="nome" ng-required="true" minlength="10">
         <input class="form-control" type="text" ng-model="contato.telefone" name="telefone" placeholder="contato" ng-required="true"
                ng-pattern="/^\d{4,5}-\d{4}$/">
-            {{contato.data}}
+            <!--{{contato.data}}-->
             <input class="form-control" type="text" ng-model="contato.data" name="data" placeholder="data" ui-date>
+            <input class="form-control" type="text" ng-model="contato.cidade" name="cidade" placeholder="cidade">
 
         <select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome +'( ' + (operadora.preco|currency) + ' )' group by operadora.categoria for operadora in operadoras |orderBy:'nome'">
             <option value="">Selecione uma operadora</option>
