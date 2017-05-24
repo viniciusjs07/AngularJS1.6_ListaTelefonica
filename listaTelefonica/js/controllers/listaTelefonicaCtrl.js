@@ -1,7 +1,7 @@
 /**
  * Created by Vinicius Silva on 02/05/2017.
  */
-angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($scope, contatosAPI, operadorasAPI, serialGeneratorContato) {
+angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($scope, contatosAPI, operadorasAPI, estadosAPI, serialGeneratorContato) {
     $scope.app = "Lista Telefônica";
     $scope.contatos = [];
     $scope.operadoras = [];
@@ -25,8 +25,10 @@ angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($s
     };
     
     var carregarEstados = function () {
-        
-    }
+      estadosAPI.getEstados().then(function (response) {
+         $scope.estados = response.data;
+      });
+    };
 
 
     $scope.adicionarContato = function (contato) {
@@ -57,5 +59,6 @@ angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($s
     }
     carregarContatos();
     carregarOperadoras();
+    carregarEstados();
 
 });
