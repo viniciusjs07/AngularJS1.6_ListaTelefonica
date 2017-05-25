@@ -48,7 +48,7 @@
                 <td>{{contato.telefone}}</td>
                 <td>{{contato.operadora.nome | lowercase}}</td>
                 <td>{{contato.cidade.nome | lowercase}}</td>
-                <td>{{contato.cidade.estado | lowercase}}</td>
+                <td>{{contato.cidade.estado.nome | lowercase}}</td>
                 <td>{{contato.data | date:"dd/MM/yyyy HH:mm"}}</td>
             </tr>
         </table>
@@ -61,9 +61,9 @@
                ng-pattern="/^\d{4,5}-\d{4}$/">
             <!--{{contato.data}}-->
             <input class="form-control" type="text" ng-model="contato.data" name="data" placeholder="data" ui-date>
-            <input class="form-control" type="text" ng-model="contato.cidade" name="cidade" placeholder="cidade">
+            <input class="form-control" type="text" ng-model="contato.cidade.nome" name="cidade" placeholder="cidade" ng-required="true">
 
-            <select class="form-control" ng-model="contato.estado" ng-options="estado.nome for estado in estados">
+            <select class="form-control" ng-model="contato.cidade.estado" ng-options="estado.nome for estado in estados">
                 <option value="">Selecione seu estado</option>
                 </select>
 

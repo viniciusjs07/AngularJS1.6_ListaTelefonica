@@ -16,6 +16,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($s
                 item.serial = serialGeneratorContato.generatorSerial();
             });
             $scope.contatos = response.data;
+
         });
     };
     var carregarOperadoras = function () {
@@ -34,6 +35,9 @@ angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($s
     $scope.adicionarContato = function (contato) {
         contato.serial = serialGeneratorContato.generatorSerial();
         contato.data = new Date();
+        console.log( "contato");
+        console.log( contato);
+
         contatosAPI.saveContato(contato).then(function (response) {
             delete $scope.contato;
             $scope.contatoForm.$setPristine();
