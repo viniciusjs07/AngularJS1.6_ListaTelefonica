@@ -21,12 +21,16 @@
     <script src="js/filters/limitNameFilter.js"></script>
     <script src="js/filters/limitNameFilter.js"></script>
     <script src="js/directives/uiDateDirective.js"></script>
+    <script src="js/directives/uiAlertDirective.js"></script>
 </head>
 <body ng-controller="listaTelefonicaCTRL">
     <div class="jumbotron">
         <h4 ng-bind="app"></h4>
 
-        <div ui-alert title="Ops, aconteceu um problema!"></div>
+        <div ng-show="error.length > 0">
+            <ui-alert title="Ops, aconteceu um problema!" message="error"></ui-alert>
+        </div>
+
 
         <input class="form-control" type="text" ng-model="criterioDeBusca" placeholder="O que você deseja buscar?">
         <table ng-show="contatos.length > 0" class="table">
