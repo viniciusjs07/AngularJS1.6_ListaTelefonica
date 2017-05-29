@@ -7,9 +7,9 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 
 var contatos = [
-	{serial : "F'1AK3FCVWDBJB(S.C*d",nome: "Bruno da Silva", telefone: "9999-2222", data: new Date(), operadora: {nome: "Oi", codigo: 14, categoria: "Celular"}, cidade:{nome:"Campina Grande",estado:{nome:"PB"}}},
-	{serial : "F@1AGSFCVWDBJB(S.C*$",nome: "SANDRA da MARIA de Souza correia", telefone: "9999-3333", data: new Date(), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular"},cidade:{nome:"Recife",estado:{nome:"PE"}}},
-	{serial : "F+1AK3FCV#2BJB(S.C%&",nome: "vinicius da silva", telefone: "9999-9999", data: new Date(), operadora: {nome: "Tim", codigo: 41, categoria: "Celular"},cidade:{nome:"Fortaleza",estado:{nome:"CE"}}}
+	{serial : "F'1AK3FCVWDBJB(S.C*d",nome: "Bruno da Silva", telefone: "9999-2222", data: new Date(), operadora: {nome: "Oi", codigo: 14, categoria: "Celular"}, cidade:{nome:"Campina Grande",estado:{nome:"PB"},cep:"55555-858"}},
+	{serial : "F@1AGSFCVWDBJB(S.C*$",nome: "SANDRA da MARIA de Souza correia", telefone: "9999-3333", data: new Date(), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular"},cidade:{nome:"Recife",estado:{nome:"PE"},cep:"55544-000"}},
+	{serial : "F+1AK3FCV#2BJB(S.C%&",nome: "vinicius da silva", telefone: "9999-9999", data: new Date(), operadora: {nome: "Tim", codigo: 41, categoria: "Celular"},cidade:{nome:"Fortaleza",estado:{nome:"CE"},cep:"55231-777"}}
 ];
 var operadoras = [
 	{nome: "Oi", codigo: 14, categoria: "Celular", preco: 2},
