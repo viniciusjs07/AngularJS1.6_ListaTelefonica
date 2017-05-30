@@ -24,7 +24,7 @@ angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($s
             $scope.operadoras = response.data;
         },function error(error) {
             console.log("responseee");
-            var message = "Não foi possível carregar a lista de contatos. Verifique a conexao com o servidor!";
+            var message = "Não foi possível carregar a lista de contatos. Verifique sua conexão com o servidor!";
             console.log(message);
            $scope.error = message;
         });
