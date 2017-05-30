@@ -66,8 +66,15 @@ angular.module("listaTelefonica").controller("listaTelefonicaCTRL", function ($s
         $scope.criterioDeOrdenacao = campo;
         $scope.direcaoDaOrdenacao = !$scope.direcaoDaOrdenacao;
     }
+
+    var carregarEnderecos = function() {
+        contatosAPI.getEnderecos(58700010).then(function (response) {
+            console.log(response);
+        });
+    }
     carregarContatos();
     carregarOperadoras();
     carregarEstados();
+    carregarEnderecos();
 
 });

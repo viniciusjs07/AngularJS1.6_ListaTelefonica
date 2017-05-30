@@ -9,8 +9,14 @@ angular.module("listaTelefonica").factory("contatosAPI", function ($http,configV
     var _saveContato = function (contato) {
         return $http.post(configValue.baseUrl+"/contatos",contato);
     };
+
+
+    var _getEnderecos = function (cep) {
+      return $http.get("http://viacep.com.br/ws/" + cep + "/json/");
+    };
     return {
         getContatos: _getcontatos,
-        saveContato: _saveContato
+        saveContato: _saveContato,
+        getEnderecos: _getEnderecos
     };
 });
